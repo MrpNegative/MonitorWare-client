@@ -53,7 +53,7 @@ useEffect(()=>{
         <form onSubmit={handelLogin}>
           <input type="email" name="email" placeholder="Email" required />
           <input type="password" name="pass" placeholder="Password" required />
-          <Link to="/">
+          <Link to="/reset">
             <strong>Forgot Password</strong>
           </Link>
           <p>{errors}</p>
