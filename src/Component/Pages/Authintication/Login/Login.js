@@ -1,39 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase-init';
 import Loading from "../../Genarel/Loading/Loading";
 
 const Login = () => {
+  const [user] = useAuthState(auth)
     // error state
   const [errors, setErrors] = useState('')
     // user
-    const [user] = useAuthState(auth);
   // react firebase hook
   const [signInWithEmailAndPassword, epUser, loading, emailPassError] =
     useSignInWithEmailAndPassword(auth);
+    //// Google
+  const [signInWithGoogle, guser, googleLoading, gmailError] = useSignInWithGoogle(auth);
 
   // handel login
   const handelLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
-    console.log(email, pass);
     signInWithEmailAndPassword(email, pass)
   };
 //   errors
 useEffect(()=>{
-    const error = emailPassError;
+    const error = emailPassError || gmailError;
     if(error){
       setErrors(error?.message)
     }
-  },[emailPassError])
+  },[emailPassError, gmailError])
 
-  // loading 
-  if(loading){
-    <Loading></Loading>
-  }
   //page navigation
   const navigate = useNavigate();
   const location = useLocation();
@@ -43,6 +40,11 @@ useEffect(()=>{
       navigate(from);
     }
   }, [user]);
+
+  // loading 
+  if(loading || googleLoading){
+   return <Loading></Loading>
+  }
   return (
     <div className="main-login-container">
       <div className="login-container">
@@ -64,7 +66,7 @@ useEffect(()=>{
           </strong>{" "}
         </p>
         <p className="or">Or</p>
-        <div className="google-btn">
+        <div onClick={()=>{signInWithGoogle()}} className="google-btn">
           <p>Continue With Google</p>
         </div>
       </div>

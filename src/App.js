@@ -1,9 +1,9 @@
 import { Route, Router, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './Component/Pages/Authintication/Login/Login';
-import AllRouts from './Component/Pages/Authintication/AllRouts/AllRouts';
+
 import Signup from './Component/Pages/Authintication/Signup/Signup';
-import Header from './Component/Pages/Genarel/Header/Header';
+import Home from './Component/Pages/Genarel/Home/Home';
 import Nav from './Component/Pages/Genarel/Nav/Nav';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
     <div className="App">
       <Nav/>
     <Routes>
+    <Route path="/" element={<Home/>} />
     <Route path="/login" element={<Login/>} />
     <Route path="/signup" element={<Signup/>} />
     </Routes>

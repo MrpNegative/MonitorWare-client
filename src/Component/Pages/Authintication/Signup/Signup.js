@@ -1,39 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Signup.css";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { auth } from "../firebase-init";
 import Loading from "../../Genarel/Loading/Loading";
 
+
 const Signup = () => {
+  const [user] = useAuthState(auth)
   // error state 
   const [errors, setErrors] = useState('')
 
   // react firebase hook
-  const [createUserWithEmailAndPassword, user, loading, emailPassError] =
+  ////Email pass
+  const [createUserWithEmailAndPassword, epUser, loading, emailPassError] =
     useCreateUserWithEmailAndPassword(auth);
+  //// Google
+  const [signInWithGoogle, guser, googleLoading, gmailError] = useSignInWithGoogle(auth);
 
   // handel Signup
   const handelSignup = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
-    // console.log(error);
-    console.log(email, pass);
     createUserWithEmailAndPassword(email, pass)
   };
   //   errors
   useEffect(()=>{
-    const error = emailPassError;
+    const error = emailPassError || gmailError;
     if(error){
       setErrors(error?.message)
     }
-  },[emailPassError])
+  },[emailPassError, gmailError])
 
-  // loading 
-  if(loading){
-    <Loading></Loading>
-  }
   //navigate 
   const navigate = useNavigate();
   const location = useLocation();
@@ -43,6 +42,11 @@ const Signup = () => {
       navigate(from);
     }
   }, [user]);
+  
+  // loading 
+  if(loading || googleLoading){
+    return <Loading></Loading>
+  }
   return (
     <div className="main-Signup-container">
       <div className="Signup-container">
@@ -61,7 +65,7 @@ const Signup = () => {
           </strong>{" "}
         </p>
         <p className="or">Or</p>
-        <div className="google-btn">
+        <div onClick={()=>{signInWithGoogle()}} className="google-btn">
           <p>Continue With Google</p>
         </div>
         <p className="terms"><strong>Note:</strong> By <strong>SignUp</strong> you are agreeing with our <strong>Terms and Conditions</strong> </p>
