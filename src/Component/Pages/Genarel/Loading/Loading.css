@@ -1,0 +1,10 @@
+.loading-page{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 20px;
+}
+.loading-page img{
+    width: 300px;
+}

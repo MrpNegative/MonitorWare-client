@@ -17,7 +17,7 @@ const Nav = () => {
         </li>
       </ul>
       <div className="d-flex">
-        <button className="btn btn-light btn-outline-success" >LogIn</button>
+        <button className="btn fw-bold btn-light btn-outline-success" ><Link to="/login">LogIn</Link></button>
       </div>
     </div>
   </div>

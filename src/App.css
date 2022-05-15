@@ -19,4 +19,8 @@
 .color{
   color: #db327b;
 }
+a{
+  text-decoration: none;
+  color: inherit;
+}
 /* button  */
