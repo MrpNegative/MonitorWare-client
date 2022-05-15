@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Signup.css";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../firebase-init";
@@ -34,6 +34,15 @@ const Signup = () => {
   if(loading){
     <Loading></Loading>
   }
+  //navigate 
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
   return (
     <div className="main-Signup-container">
       <div className="Signup-container">

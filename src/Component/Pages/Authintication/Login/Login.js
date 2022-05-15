@@ -1,12 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase-init';
+import Loading from "../../Genarel/Loading/Loading";
 
 const Login = () => {
+    // error state
+  const [errors, setErrors] = useState('')
+    // user
+    const [user] = useAuthState(auth);
   // react firebase hook
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, epUser, loading, emailPassError] =
     useSignInWithEmailAndPassword(auth);
 
   // handel login
@@ -14,13 +19,30 @@ const Login = () => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
-    console.log(error)
     console.log(email, pass);
     signInWithEmailAndPassword(email, pass)
   };
-//   errors 
-  
+//   errors
+useEffect(()=>{
+    const error = emailPassError;
+    if(error){
+      setErrors(error?.message)
+    }
+  },[emailPassError])
 
+  // loading 
+  if(loading){
+    <Loading></Loading>
+  }
+  //page navigation
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  useEffect(() => {
+    if (user) {
+      navigate(from);
+    }
+  }, [user]);
   return (
     <div className="main-login-container">
       <div className="login-container">
@@ -32,6 +54,7 @@ const Login = () => {
           <Link to="/">
             <strong>Forgot Password</strong>
           </Link>
+          <p>{errors}</p>
           <input className="login-btn" type="submit" value={"LogIn"} />
         </form>
         <p>
