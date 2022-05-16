@@ -18,7 +18,7 @@ const Inventory = () => {
                 }
             </div>
             <div className='container mb-5'>
-            <button className='btn btn-dark d-block mx-auto'><Link to='/manageinventory'>See All</Link></button>
+            <button className='btn btn-dark d-block mx-auto'><Link to='/manageitems'>Manage Items</Link></button>
             </div>
         </div>
     );

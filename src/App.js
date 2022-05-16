@@ -7,9 +7,9 @@ import ForgotPass from "./Component/Pages/Authintication/ForgotPass/Forgot";
 import Home from "./Component/Pages/Genarel/Home/Home";
 import Nav from "./Component/Pages/Genarel/Nav/Nav";
 import RequireAuth from "./Component/Pages/Authintication/RequarAuth/RequireAuth";
-import MainInventory from "./Component/Pages/Genarel/MainInventory/MainInventory";
 import AddItem from "./Component/Pages/Genarel/AddItem/AddItem";
 import Update from "./Component/Pages/Genarel/Update/Update";
+import ManageItems from "./Component/Pages/Genarel/ManageItems/ManageItems";
 
 function App() {
   return (
@@ -21,9 +21,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/reset" element={<ForgotPass />} />
-        <Route path="/inventory" element={
+        <Route path="/manageitems" element={
           <RequireAuth>
-            <MainInventory/>
+           <ManageItems/>
           </RequireAuth>
         } />
         <Route path="/additem" element={

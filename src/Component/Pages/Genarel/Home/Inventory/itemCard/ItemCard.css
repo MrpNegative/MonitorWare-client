@@ -12,6 +12,8 @@
 .item-container img{
     width: 100%;
     text-align: center;
+    object-fit: cover;
+    height: 180px;
 }
 .item-name{
     font-size: 19px;

@@ -1,0 +1,64 @@
+.updateItem-container{
+    max-width: 900px;
+    box-shadow: 0px 0px 3px 0px #1d0909d5;
+    margin: 50px 10px 0 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.updateIMG-container{
+    margin: 0 20px ;
+    width: 290px;
+}
+.updateIMG-container img{
+    width: 100%;
+    object-fit: cover;
+    height: 240px;
+    
+}
+.UpdateInfo-container{
+    max-width: 500px;
+    margin: 20px;
+}
+.UItem-name{
+    margin: 5px 0;
+    font-size: 22px;
+    font-weight: bolder;
+    margin-bottom: 30px;
+}
+.UItem-price{
+    margin: 5px 0;
+    font-size: 20px;
+    padding: 7px;
+    padding-left: 15px;
+    background-color: rgba(128, 128, 128, 0.141);
+    border-radius: 21px;
+    width: 150px;
+    font-weight: 600;
+}
+.UItem-suppName{
+    margin: 10px;
+    font-weight: 600;
+}
+.UItem-category{
+    margin: 10px;
+    font-weight: 600;
+}
+.UItem-quantity{
+    margin: 10px;
+    font-size: 20px;
+    width: 150px;
+    font-weight: 600;
+    color: rgb(187, 13, 13);
+}
+.restock-input{
+    width: 60px;
+    padding: 6.8px;
+    background-color: rgba(175, 164, 164, 0.431);
+    border: none;
+    border-top-right-radius: 5px;
+border-bottom-right-radius: 5px;
+    margin: 0 -1px;
+}
