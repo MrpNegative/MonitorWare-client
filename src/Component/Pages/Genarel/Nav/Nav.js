@@ -19,6 +19,12 @@ const Nav = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to='/' >Home</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to='/inventory' >Inventory</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to='/additem' >Add Item</Link>
+        </li>
       </ul>
       <div className="d-flex">
         {user ? (

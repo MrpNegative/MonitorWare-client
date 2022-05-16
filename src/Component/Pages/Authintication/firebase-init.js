@@ -12,14 +12,6 @@ const firebaseConfig  = {
   appId:process.env.REACT_APP_appId,
 };
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyDzbqk4Rz5upNVImP5anZgd4GOefRBAZFc",
-//   authDomain: "techhouse-91edb.firebaseapp.com",
-//   projectId: "techhouse-91edb",
-//   storageBucket: "techhouse-91edb.appspot.com",
-//   messagingSenderId: "997949686680",
-//   appId: "1:997949686680:web:922445733cf9eebda521ed"
-// };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

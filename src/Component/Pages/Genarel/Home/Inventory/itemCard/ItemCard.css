@@ -1,0 +1,44 @@
+.item-container{
+    padding: 0 20px 20px 20px;
+    width: 250px;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px 0px #1d0909d5;
+    margin: 10px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.item-container img{
+    width: 100%;
+    text-align: center;
+}
+.item-name{
+    font-size: 19px;
+    text-align: center;
+}
+.item-description{
+    text-align: left;
+
+}
+.item-price{
+    font-size: 22px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.item-quantity{
+    font-weight: 600;
+    color: gray;
+    margin: 5px 0;
+}
+.item-suppName{
+    margin: 5px 0;
+    color: gray;
+    font-weight: 600;
+
+}
+.item-category{
+    margin: 5px 0;
+    font-weight: 600;
+    color: gray;
+}

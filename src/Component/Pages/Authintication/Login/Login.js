@@ -1,39 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import { auth } from '../firebase-init';
+import {
+  useAuthState,
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import { auth } from "../firebase-init";
 import Loading from "../../Genarel/Loading/Loading";
 
 const Login = () => {
-  const [user] = useAuthState(auth)
-    // error state
-  const [errors, setErrors] = useState('')
-    // user
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [user] = useAuthState(auth);
+  // error state
+  const [errors, setErrors] = useState("");
+
   // react firebase hook
   const [signInWithEmailAndPassword, epUser, loading, emailPassError] =
     useSignInWithEmailAndPassword(auth);
-    //// Google
-  const [signInWithGoogle, guser, googleLoading, gmailError] = useSignInWithGoogle(auth);
+  //// Google
+  const [signInWithGoogle, guser, googleLoading, gmailError] =
+    useSignInWithGoogle(auth);
 
   // handel login
   const handelLogin = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
-    signInWithEmailAndPassword(email, pass)
+    signInWithEmailAndPassword(email, pass);
   };
-//   errors
-useEffect(()=>{
+  //   errors
+  useEffect(() => {
     const error = emailPassError || gmailError;
-    if(error){
-      setErrors(error?.message)
+    if (error) {
+      setErrors(error?.message);
     }
-  },[emailPassError, gmailError])
+  }, [emailPassError, gmailError]);
 
   //page navigation
-  const navigate = useNavigate();
-  const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   useEffect(() => {
     if (user) {
@@ -41,9 +46,9 @@ useEffect(()=>{
     }
   }, [user]);
 
-  // loading 
-  if(loading || googleLoading){
-   return <Loading></Loading>
+  // loading
+  if (loading || googleLoading) {
+    return <Loading></Loading>;
   }
   return (
     <div className="main-login-container">
@@ -66,7 +71,12 @@ useEffect(()=>{
           </strong>{" "}
         </p>
         <p className="or">Or</p>
-        <div onClick={()=>{signInWithGoogle()}} className="google-btn">
+        <div
+          onClick={() => {
+            signInWithGoogle();
+          }}
+          className="google-btn"
+        >
           <p>Continue With Google</p>
         </div>
       </div>
