@@ -7,7 +7,7 @@ const useItem = url => {
         .then(res=>res.json())
         .then(data=>setItem(data))
     },[url])
-    return item;
+    return [item, setItem];
 };
 
 export default useItem;

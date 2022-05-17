@@ -25,22 +25,10 @@ const AddItem = () => {
             console.log(response)
             const {data} = response;
             if(data.insertedId){
-                alert('kk')
-            // e.target.reset();
+                alert('User Added Successfully')
+            event.target.reset();
             }
         })
-        // const url = "http://localhost:5000/inventory"
-        // fetch(url, {
-        //   method: 'POST',
-        //   headers: {
-        //     'content-type': 'application/json'
-        //   },
-        //   body: JSON.stringify(item)
-        // })
-        // .then(res=>res.json())
-        // .then(result => {
-        //   console.log(result)
-        // })
     }
     return (
         <div className='container d-flex justify-content-center align-center'>

@@ -4,10 +4,35 @@ import "./ManageItems.css";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { GiUpgrade } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
 
 const ManageItems = () => {
   const url = "http://localhost:5000/inventory";
-  const [items] = useItems(url);
+  const [items, setItems] = useItems(url);
+  const handelDelete = id =>{
+      const dUrl = `http://localhost:5000/inventory/${id}`
+      const proceed = window.confirm('Are You Sure')
+      if(proceed){
+        axios.delete(dUrl)
+        .then(response => {
+          console.log(response)
+          const {data} = response;
+          if(data.acknowledged){
+            toast.success('Delete Successful')
+              const newItems = items.filter(x => x._id !== id)
+              setItems(newItems)
+              return
+          }
+          else{
+            toast.success('something went wrong')
+
+          }
+      })
+      }
+      
+  }
+
   return (
     <div className="container">
         <h1 className="header1 text-center my-3">Manage Items</h1>
@@ -31,7 +56,7 @@ const ManageItems = () => {
                     <td>{item.price}</td>
                     <td>{item.suppName}</td>
                     <td>{item.category}</td>
-                    <td><button title="Delete" className="tAbtn"><RiDeleteBin6Line/></button> <button title="Update" className="tAbtn"><Link to={`/update/${item._id}`}><GiUpgrade/></Link></button></td>
+                    <td><button title="Delete" onClick={()=>{handelDelete(item._id)}} className="tAbtn"><RiDeleteBin6Line/></button> <button title="Update" className="tAbtn"><Link to={`/update/${item._id}`}><GiUpgrade/></Link></button></td>
                   </tr>
                   )
             }
