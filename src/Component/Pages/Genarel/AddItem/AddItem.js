@@ -12,7 +12,7 @@ const AddItem = () => {
         const item = {
             name: event.target.name.value,
             description: event.target.name.value,
-            img: event.target.img,
+            img: event.target.img.value,
             category: event.target.category.value,
             email: user.email,
             quantity: event.target.quantity.value,

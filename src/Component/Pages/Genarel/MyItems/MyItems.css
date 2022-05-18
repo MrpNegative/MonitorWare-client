@@ -1,0 +1,7 @@
+.my-items{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 10px;
+    align-items: center;
+    justify-content: center;
+}
