@@ -7,7 +7,6 @@ import { signOut } from "firebase/auth";
 const Nav = () => {
   const [user] = useAuthState(auth);
   const email = user?.email;
-  console.log(email);
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

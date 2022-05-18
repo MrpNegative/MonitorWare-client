@@ -20,7 +20,7 @@ const AddItem = () => {
             suppName: event.target.supplierName.value
         }
         console.log(item);
-        axios.post('http://localhost:5000/inventory', item)
+        axios.post('https://obscure-taiga-87074.herokuapp.com/inventory', item)
         .then(response => {
             console.log(response)
             const {data} = response;
@@ -40,7 +40,7 @@ const AddItem = () => {
                 <textarea type="text-area" name='description' placeholder='Description' required />
                 <input type="text" name='img' placeholder='Image Url' required />
                 <input type="text" name='category' placeholder='Category' required />
-                <input type="email" name='email' placeholder='Email' value={user.email} required />
+                <input type="email" name='email' placeholder='Email' value={user.email} readOnly required />
                 <input min="1" type="number" name='quantity' placeholder='Quantity' required />
                 <input min="0" type="number" name='price' placeholder='Price' required />
                 <input type="text" name='supplierName' placeholder='Supplier Name' required />

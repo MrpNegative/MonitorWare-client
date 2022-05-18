@@ -8,10 +8,10 @@ import axios from "axios";
 import toast from "react-hot-toast";
 
 const ManageItems = () => {
-  const url = "http://localhost:5000/inventory";
+  const url = "https://obscure-taiga-87074.herokuapp.com/inventory";
   const [items, setItems] = useItems(url);
   const handelDelete = id =>{
-      const dUrl = `http://localhost:5000/inventory/${id}`
+      const dUrl = `https://obscure-taiga-87074.herokuapp.com/inventory/${id}`
       const proceed = window.confirm('Are You Sure')
       if(proceed){
         axios.delete(dUrl)

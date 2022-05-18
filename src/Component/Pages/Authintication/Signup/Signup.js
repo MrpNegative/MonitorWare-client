@@ -9,9 +9,11 @@ import {
 } from "react-firebase-hooks/auth";
 import { auth } from "../firebase-init";
 import Loading from "../../Genarel/Loading/Loading";
+import useToken from "../../../Hooks/useToken";
 
 const Signup = () => {
   const [user] = useAuthState(auth);
+  const [token] = useToken(user)
   // error state
   const [errors, setErrors] = useState("");
 
@@ -47,10 +49,10 @@ const Signup = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from);
     }
-  }, [user]);
+  }, [token]);
 
   // loading
   if (loading || googleLoading) {

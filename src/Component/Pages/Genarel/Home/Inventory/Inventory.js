@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const Inventory = () => {
-    const url = 'http://localhost:5000/inventory'
+    const url = 'https://obscure-taiga-87074.herokuapp.com/inventory'
     const [item] = useItems(url)
     const homeItem = item.slice(0,4)
     return (

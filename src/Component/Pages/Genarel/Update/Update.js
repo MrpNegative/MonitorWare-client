@@ -7,7 +7,7 @@ import "./Update.css";
 
 const Update = () => {
   const { id } = useParams();
-  const url = `http://localhost:5000/inventory/${id}`;
+  const url = `https://obscure-taiga-87074.herokuapp.com/inventory/${id}`;
   const [item, setItem] = useItem(url);
   const { name, img, category, quantity, description, price, suppName } =
     item;

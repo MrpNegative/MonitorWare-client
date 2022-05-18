@@ -8,11 +8,13 @@ import {
 } from "react-firebase-hooks/auth";
 import { auth } from "../firebase-init";
 import Loading from "../../Genarel/Loading/Loading";
+import useToken from "../../../Hooks/useToken";
 
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [user] = useAuthState(auth);
+  const [token] = useToken(user)
   // error state
   const [errors, setErrors] = useState("");
 
@@ -24,11 +26,13 @@ const Login = () => {
     useSignInWithGoogle(auth);
 
   // handel login
-  const handelLogin = (event) => {
+  const handelLogin = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
     signInWithEmailAndPassword(email, pass);
+    // const {data} = await axios.post('https://obscure-taiga-87074.herokuapp.com/login', {email})
+    // localStorage.setItem('accessToken', data.accessToken)
   };
   //   errors
   useEffect(() => {
@@ -41,10 +45,10 @@ const Login = () => {
   //page navigation
   const from = location.state?.from?.pathname || "/";
   useEffect(() => {
-    if (user) {
+    if (token) {
       navigate(from);
     }
-  }, [user]);
+  }, [token]);
 
   // loading
   if (loading || googleLoading) {
