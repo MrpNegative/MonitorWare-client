@@ -12,6 +12,7 @@ import Footer from "./Component/Pages/Genarel/Footer/Footer";
 import Update from "./Component/Pages/Genarel/Update/Update";
 import ManageItems from "./Component/Pages/Genarel/ManageItems/ManageItems";
 import { Toaster } from "react-hot-toast";
+import MyItems from "./Component/Pages/Genarel/MyItems/MyItems";
 
 function App() {
   return (
@@ -44,6 +45,14 @@ function App() {
           element={
             <RequireAuth>
               <Update />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/myitems/:email"
+          element={
+            <RequireAuth>
+              <MyItems/>
             </RequireAuth>
           }
         />

@@ -6,6 +6,8 @@ import { signOut } from "firebase/auth";
 
 const Nav = () => {
   const [user] = useAuthState(auth);
+  const email = user?.email;
+  console.log(email);
     return (
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,12 +21,17 @@ const Nav = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to='/' >Home</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to='/inventory' >Inventory</Link>
-        </li>
-        <li className="nav-item">
+        
+        {user ? (
+          <>
+          <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to='/additem' >Add Item</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to={`/myitems/${email}`} >My Items</Link>
+        </li>
+          </>
+        ):''}
       </ul>
       <div className="d-flex">
         {user ? (

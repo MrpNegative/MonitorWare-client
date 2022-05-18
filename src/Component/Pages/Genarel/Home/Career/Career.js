@@ -12,7 +12,7 @@ const Career = () => {
         </div>
         <div className="car-info-container">
           <h1 className="header1">
-            We Are Hiring<i class="fa fa-bullhorn" aria-hidden="true"></i>
+            We Are Hiring<i className="fa fa-bullhorn" aria-hidden="true"></i>
           </h1>
           <p>
             <Link className="text-danger fw-bold" to="/">
