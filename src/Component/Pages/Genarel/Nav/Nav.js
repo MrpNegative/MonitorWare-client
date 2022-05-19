@@ -29,6 +29,9 @@ const Nav = () => {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to={`/myitems/${email}`} >My Items</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/manageitems" >Manage Items</Link>
+        </li>
           </>
         ):''}
         <li className="nav-item">

@@ -1,5 +1,4 @@
 import axios from "axios";
-import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useParams } from "react-router-dom";
 import useItem from "../../../Hooks/useItem";
@@ -8,7 +7,7 @@ import "./Update.css";
 const Update = () => {
   const { id } = useParams();
   const url = `https://obscure-taiga-87074.herokuapp.com/inventory/${id}`;
-  const [item, setItem] = useItem(url);
+  const [item] = useItem(url);
   const { name, img, category, quantity, description, price, suppName } =
     item;
 
@@ -26,7 +25,6 @@ const Update = () => {
           if (data.acknowledged) {
             toast("Delivery done");
             window.location.reload();
-            // setItem({...item, quantity: newQuantity})
           }
         });
       }
@@ -48,9 +46,8 @@ const Update = () => {
           console.log(response);
           const { data } = response;
           if (data.acknowledged) {
-            toast("Delivery done");
+            toast("Item Restocked");
             window.location.reload();
-            // setItem({...item, quantity: newQuantity})
           }
         });
       }

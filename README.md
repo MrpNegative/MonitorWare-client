@@ -9,4 +9,14 @@ Live Site Link [Click Hear](https://techhouse-91edb.web.app/).
 * Users can delete product if that needed.
 * And we have extream security so that unauthrized user can't access the data.
 
-
+## List Of Technologies
+* React
+* React firebase hook
+* React hot tost
+* Bootstrap 5
+* Firebase
+* React Router dom
+* Google Fonts
+* font awesome
+* React icons
+* And ETC.

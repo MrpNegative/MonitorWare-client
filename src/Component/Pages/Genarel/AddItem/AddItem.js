@@ -24,7 +24,7 @@ const AddItem = () => {
             console.log(response)
             const {data} = response;
             if(data.insertedId){
-                alert('User Added Successfully')
+                alert('Item added')
             event.target.reset();
             }
         })

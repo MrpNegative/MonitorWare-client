@@ -44,7 +44,7 @@ const ManageItems = () => {
               <th scope="col">Quantity</th>
               <th scope="col">Price</th>
               <th scope="col">Supplier</th>
-              <th scope="col">Category</th>
+             
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -55,7 +55,6 @@ const ManageItems = () => {
                     <td>{item.quantity}</td>
                     <td>{item.price}</td>
                     <td>{item.suppName}</td>
-                    <td>{item.category}</td>
                     <td><button title="Delete" onClick={()=>{handelDelete(item._id)}} className="tAbtn"><RiDeleteBin6Line/></button> <button title="Update" className="tAbtn"><Link to={`/inventory/${item._id}`}><GiUpgrade/></Link></button></td>
                   </tr>
                   )

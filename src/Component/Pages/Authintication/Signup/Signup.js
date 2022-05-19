@@ -19,8 +19,7 @@ const Signup = () => {
 
   // react firebase hook
   //// send verification
-  const [sendEmailVerification] =
-    useSendEmailVerification(auth);
+  const [sendEmailVerification, sending, error] = useSendEmailVerification(auth);
   ////Email pass
   const [createUserWithEmailAndPassword, epUser, loading, emailPassError] =
     useCreateUserWithEmailAndPassword(auth);
@@ -29,12 +28,12 @@ const Signup = () => {
     useSignInWithGoogle(auth);
 
   // handel Signup
-  const handelSignup = (event) => {
+  const handelSignup = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const pass = event.target.pass.value;
-    createUserWithEmailAndPassword(email, pass);
-    sendEmailVerification()
+   await createUserWithEmailAndPassword(email, pass);
+   await sendEmailVerification()
   };
   //   errors
   useEffect(() => {
