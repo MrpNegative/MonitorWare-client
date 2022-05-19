@@ -35,7 +35,7 @@ const FAQ = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div className="accordion-body">
-                  We have a 5000 square feet massive building with the capacity
+                  We have a 10000 square feet massive building with the capacity
                   to store 50000 Monitor at the same time.
                 </div>
               </div>
@@ -60,9 +60,8 @@ const FAQ = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div className="accordion-body">
-                  To become a supplier you need to be the one who make the product or you need to be the one who import the product. We do that to maintain our safety and reputations. If you wanna know more 
-                  <Link className="text-danger" to="/">
-                    click Hear
+                  To become a supplier you need to be the one who make the product or you need to be the authorized  importer of the products. We do that to maintain our safety and reputations. They are just basic requirement To See the full requirement <Link className="text-danger" to="/">
+                     click Hear
                   </Link>
                 </div>
               </div>
