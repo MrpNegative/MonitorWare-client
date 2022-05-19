@@ -19,7 +19,7 @@ const Signup = () => {
 
   // react firebase hook
   //// send verification
-  const [sendEmailVerification, sending, verifyError] =
+  const [sendEmailVerification] =
     useSendEmailVerification(auth);
   ////Email pass
   const [createUserWithEmailAndPassword, epUser, loading, emailPassError] =
@@ -61,7 +61,7 @@ const Signup = () => {
   return (
     <div className="main-Signup-container">
       <div className="Signup-container">
-        <h1>Signup</h1>
+        <h1>SIGNUP</h1>
         <hr />
         <form onSubmit={handelSignup}>
           <input type="email" name="email" placeholder="Email" required />

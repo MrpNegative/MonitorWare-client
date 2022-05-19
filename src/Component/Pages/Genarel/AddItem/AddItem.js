@@ -13,7 +13,6 @@ const AddItem = () => {
             name: event.target.name.value,
             description: event.target.name.value,
             img: event.target.img.value,
-            category: event.target.category.value,
             email: user.email,
             quantity: event.target.quantity.value,
             price: event.target.price.value,
@@ -39,7 +38,6 @@ const AddItem = () => {
                 <input type="text" name='name' placeholder='Name' required />
                 <textarea type="text-area" name='description' placeholder='Description' required />
                 <input type="text" name='img' placeholder='Image Url' required />
-                <input type="text" name='category' placeholder='Category' required />
                 <input type="email" name='email' placeholder='Email' value={user.email} readOnly required />
                 <input min="1" type="number" name='quantity' placeholder='Quantity' required />
                 <input min="0" type="number" name='price' placeholder='Price' required />

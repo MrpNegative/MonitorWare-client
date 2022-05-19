@@ -13,6 +13,8 @@ import Update from "./Component/Pages/Genarel/Update/Update";
 import ManageItems from "./Component/Pages/Genarel/ManageItems/ManageItems";
 import { Toaster } from "react-hot-toast";
 import MyItems from "./Component/Pages/Genarel/MyItems/MyItems";
+import Blog from "./Component/Pages/Genarel/Blog/Blog";
+import NotFound from "./Component/Pages/Genarel/NotFound/NotFound";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/reset" element={<ForgotPass />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="*" element={<NotFound />} />
         <Route
           path="/manageitems"
           element={
@@ -41,7 +45,7 @@ function App() {
           }
         />
         <Route
-          path="/update/:id"
+          path="/inventory/:id"
           element={
             <RequireAuth>
               <Update />

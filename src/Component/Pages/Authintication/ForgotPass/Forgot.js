@@ -21,7 +21,7 @@ const Login = () => {
     useSendPasswordResetEmail(auth);
 
   // handel login
-  const handelLogin = async (event) => {
+  const handelReset = async (event) => {
     setErrors("");
     event.preventDefault();
     const email = event.target.email.value;
@@ -65,7 +65,7 @@ const Login = () => {
         <h3>Reset Password</h3>
         <hr />
         <Toaster position="top-right" reverseOrder={true} />
-        <form onSubmit={handelLogin}>
+        <form onSubmit={handelReset}>
           <input type="email" name="email" placeholder="Email" required />
           <p>{errors}</p>
           <input className="login-btn" type="submit" value={"Send"} />

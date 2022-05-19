@@ -31,8 +31,7 @@ const Login = () => {
     const email = event.target.email.value;
     const pass = event.target.pass.value;
     signInWithEmailAndPassword(email, pass);
-    // const {data} = await axios.post('https://obscure-taiga-87074.herokuapp.com/login', {email})
-    // localStorage.setItem('accessToken', data.accessToken)
+
   };
   //   errors
   useEffect(() => {

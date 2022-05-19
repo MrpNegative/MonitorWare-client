@@ -36,7 +36,7 @@ const FAQ = () => {
               >
                 <div className="accordion-body">
                   We have a 5000 square feet massive building with the capacity
-                  to store 50000 products at the same time.
+                  to store 50000 Monitor at the same time.
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ const FAQ = () => {
                   aria-expanded="false"
                   aria-controls="flush-collapseTwo"
                 >
-                  How to supply product to us? <span>ㅤㅤ</span>
+                  How to become a Supplier? <span>ㅤㅤ</span>
                 </button>
               </h2>
               <div
@@ -60,10 +60,7 @@ const FAQ = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div className="accordion-body">
-                  If you want to be a supplier the first thing you need is to be
-                  the one who makes the product. We don't take products from
-                  third-party organizations. And the 2nd thing is your product
-                  has to be authentic. To see full requirements{" "}
+                  To become a supplier you need to be the one who make the product or you need to be the one who import the product. We do that to maintain our safety and reputations. If you wanna know more 
                   <Link className="text-danger" to="/">
                     click Hear
                   </Link>
@@ -80,7 +77,7 @@ const FAQ = () => {
                   aria-expanded="false"
                   aria-controls="flush-collapseThree"
                 >
-                  What is your location? <span>ㅤㅤ</span>
+                  Why us <span>ㅤㅤ</span>
                 </button>
               </h2>
               <div
@@ -90,10 +87,7 @@ const FAQ = () => {
                 data-bs-parent="#accordionFlushExample"
               >
                 <div className="accordion-body">
-                  OOut of every other question, the most question we revive is
-                  that. Whare is your location. If your gays are pay attention
-                  to the footer that is all the info you need from our email to
-                  our location.
+                Because we have the best setup for storing monitor. And we provide 100% return if any kinds of accident happened in our end.
                 </div>
               </div>
             </div>

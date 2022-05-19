@@ -56,13 +56,14 @@ const ManageItems = () => {
                     <td>{item.price}</td>
                     <td>{item.suppName}</td>
                     <td>{item.category}</td>
-                    <td><button title="Delete" onClick={()=>{handelDelete(item._id)}} className="tAbtn"><RiDeleteBin6Line/></button> <button title="Update" className="tAbtn"><Link to={`/update/${item._id}`}><GiUpgrade/></Link></button></td>
+                    <td><button title="Delete" onClick={()=>{handelDelete(item._id)}} className="tAbtn"><RiDeleteBin6Line/></button> <button title="Update" className="tAbtn"><Link to={`/inventory/${item._id}`}><GiUpgrade/></Link></button></td>
                   </tr>
                   )
             }
           </tbody>
         </table>
       </div>
+      <button className="btn btn-dark d-block mx-auto my-3"><Link to="/additem">Add item</Link></button>
     </div>
   );
 };

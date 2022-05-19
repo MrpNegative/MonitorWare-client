@@ -26,7 +26,7 @@ const ItemCard = ({ items, isDelete, handelDelete }) => {
       <p className="item-category">Category: {category}</p>
       </div>
      {
-       isDelete ?  <button className="btn btn-dark" onClick={()=>{handelDelete(items?._id)}}>Delete</button> : <button className="btn btn-dark"><Link to={`/update/${items._id}`}>Update</Link></button>
+       isDelete ?  <button className="btn btn-dark" onClick={()=>{handelDelete(items?._id)}}>Delete</button> : <button className="btn btn-dark"><Link to={`/inventory/${items._id}`}>Update</Link></button>
      }
     </div>
   );
