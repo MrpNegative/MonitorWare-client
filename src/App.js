@@ -15,6 +15,7 @@ import { Toaster } from "react-hot-toast";
 import MyItems from "./Component/Pages/Genarel/MyItems/MyItems";
 import Blog from "./Component/Pages/Genarel/Blog/Blog";
 import NotFound from "./Component/Pages/Genarel/NotFound/NotFound";
+import JobReq from "./Component/Pages/Genarel/JobReq/JobReq";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/reset" element={<ForgotPass />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/jobs" element={<JobReq />} />
         <Route path="*" element={<NotFound />} />
         <Route
           path="/manageitems"

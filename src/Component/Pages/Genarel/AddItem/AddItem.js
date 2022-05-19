@@ -11,7 +11,7 @@ const AddItem = () => {
         event.preventDefault()
         const item = {
             name: event.target.name.value,
-            description: event.target.name.value,
+            description: event.target.description.value,
             img: event.target.img.value,
             email: user.email,
             quantity: event.target.quantity.value,

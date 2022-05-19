@@ -15,10 +15,10 @@ const Career = () => {
             We Are Hiring<i className="fa fa-bullhorn" aria-hidden="true"></i>
           </h1>
           <p>
-            <Link className="text-danger fw-bold" to="/">
+            <Link className="text-danger fw-bold" to="/jobs">
               Click hear
             </Link>{" "}
-            to view requirement{" "}
+            to see Available Jobs{" "}
           </p>
           <p>
             Send your Resume{" "}

@@ -23,7 +23,6 @@ const ItemCard = ({ items, isDelete, handelDelete }) => {
       <p className="item-price">Price: {price}</p>
       <p className="item-quantity">Quantity: {quantity}</p>
       <p className="item-suppName">Supplier: {suppName}</p>
-      <p className="item-category">Category: {category}</p>
       </div>
      {
        isDelete ?  <button className="btn btn-dark" onClick={()=>{handelDelete(items?._id)}}>Delete</button> : <button className="btn btn-dark"><Link to={`/inventory/${items._id}`}>Update</Link></button>
